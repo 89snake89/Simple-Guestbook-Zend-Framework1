@@ -1,0 +1,65 @@
+
+
+<!--
+  See http://developer.yahoo.com/ypatterns/pattern.php?pattern=searchpagination
+  -->
+
+<?php if ($this->pageCount): ?>
+<div class="pagination">
+
+	<ul >
+		<!-- Previous page link -->
+		<?php if (isset($this->previous)): ?>
+		<li><a rel="prev" 
+			href="<?php echo $this->url(array('page' => $this->previous)); ?>">
+				&laquo; </a>
+		</li>
+		<?php else: ?>
+		<li><a href="#">&laquo;</a></li>
+		<?php endif; ?>
+
+		<!-- Numbered page links -->
+		<?php foreach ($this->pagesInRange as $page): ?>
+		<?php if ($page != $this->current): $rel = $page <= $this->previous ? 'prev' : 'next'; ?>
+		<li><a rel="<?php echo $rel;?>" 
+			href="<?php echo $this->url(array( 'page' => $page )); ?>">
+			<?php echo $page; ?> </a>
+		</li>
+		<?php else: ?>
+		<li class="active"><a href="#"><?php echo $page; ?></a></li>
+		<?php endif; ?>
+		<?php endforeach; ?>
+
+		<!-- Next page link -->
+		<?php if (isset($this->next)): ?>
+		<li><a rel="next" 
+			href="<?php echo $this->url(array('page' => $this->next)); ?>">
+				&raquo; </a>
+		</li>
+		<?php else: ?>
+		<li><a href="#">&raquo;</a></li>
+		<?php endif; ?>
+
+		<!--<li><?php if ($this->pageCount): ?> <select
+			class="paginationControlSelect" size="1">
+			<?php /*for ($page = 1; $page <= $this->pageCount; $page++): ?>
+			<?php $selected = ($page == $this->current) ? ' selected="selected"' : ''; ?>
+				<option
+					value="<?php echo $this->url( array('page' => $page )); ?>"
+					<?php echo $selected ?>>
+					<?php echo $page; ?>
+				</option>
+				<?php endfor;*/ ?>
+		</select> <?php endif; ?>
+		</li>-->
+
+	</ul>
+	
+
+
+</div>
+
+<div class="label label-info omega alpha label-table" >&nbsp;In visualizzazione record <?php echo $this->firstItemNumber;?>/<?php echo $this->lastItemNumber;?>&nbsp;
+su un totale di <?php echo $this->totalItemCount;?> </div>
+
+<?php endif; ?>
