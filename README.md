@@ -2,7 +2,9 @@
 
 This is a Zf Application, it makes for example and exercice.
 The base of this script it's [this tutorial](http://framework.zend.com/manual/en/learning.quickstart.create-model.html).
+
 -------------
+
 #VirtualHost configuration
 ```
 <VirtualHost *:80>
@@ -19,7 +21,9 @@ The base of this script it's [this tutorial](http://framework.zend.com/manual/en
     </Directory> 
 </VirtualHost>
 ```
+
 -------------
+
 
 #Sql Code for table db is
 ```
@@ -31,7 +35,9 @@ CREATE TABLE IF NOT EXISTS `guestbook` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 ```
+
 -------------
+
 #Zend framework Library
 ```
 The libraray is insert into a new directory /library/Zend
