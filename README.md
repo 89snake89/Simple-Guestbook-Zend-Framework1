@@ -2,8 +2,8 @@
 
 This is a Zf Application, it makes for example and exercice.
 The base of this script it's [this tutorial](http://framework.zend.com/manual/en/learning.quickstart.create-model.html).
-
-
+-------------
+#VirtualHost configuration
 ```
 <VirtualHost *:80>
     ServerName zf1-guestbook.local
@@ -19,8 +19,9 @@ The base of this script it's [this tutorial](http://framework.zend.com/manual/en
     </Directory> 
 </VirtualHost>
 ```
+-------------
 
-Sql Code for table db is
+#Sql Code for table db is
 ```
 CREATE TABLE IF NOT EXISTS `guestbook` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -29,4 +30,9 @@ CREATE TABLE IF NOT EXISTS `guestbook` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+```
+-------------
+#Zend framework Library
+```
+The libraray is insert into a new directory /library/Zend
 ```
